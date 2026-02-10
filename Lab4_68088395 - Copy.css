@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    /* พื้นหลังไล่สี (แก้ syntax ถูกต้องแล้ว) */
+    background: linear-gradient(
+        135deg,
+        rgb(100, 241, 84),
+        rgb(92, 92, 229),
+        rgb(111, 30, 30)
+    );
+
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 100%;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.imgContainer {
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 1s;
+}
+
+
+.slide_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px;
+}
+
+
+img {
+    position: relative;
+    width: 240px;
+    height: 370px;
+
+    filter: saturate(10%);
+    transition: 0.7s;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+img:hover {
+    transform: scale(1.05);
+}
+
+.button {
+    position: absolute;
+    width: 240px;
+    height: 370px;
+
+    transition: 0.7s;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+#slider1:target ~ .imgContainer #img1,
+#slider2:target ~ .imgContainer #img2,
+#slider3:target ~ .imgContainer #img3,
+#slider4:target ~ .imgContainer #img4,
+#slider5:target ~ .imgContainer #img5,
+#slider6:target ~ .imgContainer #img6,
+#slider7:target ~ .imgContainer #img7 {
+    width: 390px;
+    height: 600px;
+    filter: saturate(100%);
+    background-color: transparent;
+}
+
+#slider1:target ~ .imgContainer { left: 60%; }
+#slider2:target ~ .imgContainer { left: 40%; }
+#slider3:target ~ .imgContainer { left: 20%; }
+#slider4:target ~ .imgContainer { left: 0%; }
+#slider5:target ~ .imgContainer { left: -20%; }
+#slider6:target ~ .imgContainer { left: -40%; }
+#slider7:target ~ .imgContainer { left: -60%; }
+
